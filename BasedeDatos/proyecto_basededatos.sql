@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2019 a las 00:30:08
+-- Tiempo de generación: 07-07-2019 a las 18:13:44
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -29,13 +29,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `id` int(11) NOT NULL,
+  `id_clientes` int(11) NOT NULL,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `apellido` text COLLATE utf8_spanish_ci NOT NULL,
   `correo` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `direccion` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `usuario` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `contraseña` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `apellido` text COLLATE utf8_spanish_ci NOT NULL
+  `config_cont` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` varchar(200) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -75,9 +74,34 @@ CREATE TABLE `productos` (
 CREATE TABLE `proveedor` (
   `id_proveedor` int(11) NOT NULL,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
-  `provincia` text COLLATE utf8_spanish_ci NOT NULL,
   `correo` varchar(200) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `provincias`
+--
+
+CREATE TABLE `provincias` (
+  `id_provincia` int(11) NOT NULL COMMENT 'codigo de la provincia',
+  `nombre_provincia` varchar(200) COLLATE utf8_spanish_ci NOT NULL COMMENT 'tanto para el cliente como para el proveedor'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `provincias`
+--
+
+INSERT INTO `provincias` (`id_provincia`, `nombre_provincia`) VALUES
+(7, 'ChiriquÃ­'),
+(8, 'ChiriquÃ­'),
+(9, 'ChiriquÃ­'),
+(10, 'ChiriquÃ­'),
+(11, 'ChiriquÃ­'),
+(12, 'ChiriquÃ­'),
+(13, 'ChiriquÃ­'),
+(14, 'ChiriquÃ­'),
+(15, 'ChiriquÃ­');
 
 -- --------------------------------------------------------
 
@@ -134,7 +158,7 @@ CREATE TABLE `vendedor` (
 -- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_clientes`);
 
 --
 -- Indices de la tabla `pedido`
@@ -153,6 +177,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `proveedor`
   ADD PRIMARY KEY (`id_proveedor`);
+
+--
+-- Indices de la tabla `provincias`
+--
+ALTER TABLE `provincias`
+  ADD PRIMARY KEY (`id_provincia`);
 
 --
 -- Indices de la tabla `stock`
@@ -186,7 +216,7 @@ ALTER TABLE `vendedor`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_clientes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
@@ -205,6 +235,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `proveedor`
   MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `provincias`
+--
+ALTER TABLE `provincias`
+  MODIFY `id_provincia` int(11) NOT NULL AUTO_INCREMENT COMMENT 'codigo de la provincia', AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `stock`

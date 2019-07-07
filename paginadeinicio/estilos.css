@@ -7,8 +7,9 @@ body{ font-family: sans-serif;
     max-width: 85%;
 }
 .logo{
-    width: 155px;
-    height: 50px;
+    width: 300px;
+    height: 30px;
+    text-align: left;
 }
 .contenedor{
    margin: 100%;
@@ -23,8 +24,9 @@ body{ font-family: sans-serif;
      justify-content: space-between;
 }
 .logo,.icon-menu{
-    margin: 5px;
-    color: skyblue;
+    margin: 15px;
+    color: #0083FF;
+    text-align: center;
 }
 .icon-menu{
     display: block;
@@ -54,9 +56,11 @@ body{ font-family: sans-serif;
     background: #fff;
     color: skyblue ;
     height: 60px;
-    border-bottom: 1px solid skyblue ;
+    border-bottom: 0px solid skyblue ;
     font-weight: bold;
     font-size: 20px;
+    text-decoration-line: none;
+
 }
 .menu__link:hover{
     background: skyblue  ;
@@ -65,6 +69,11 @@ body{ font-family: sans-serif;
 .muestrate{
     left: 0;
 }
+
+/*--------------general----------------*/
+
+
+
 /*-----------------slider---------------------------*/
 .banner img{
     width: 100%;
@@ -162,15 +171,32 @@ body{ font-family: sans-serif;
 transform:scale(1.1);
 }
 
+/*---------estilo de formulario------------*/
+.left{ 
+  position: left;
+}
+
+ .form {
+  margin: 40px;
+  position: absolute;
+  }
+
+  .right{
+    position: right;
+  }
+
 /*-----------------estilos de especial--------------*/
 .especial{
     background: #43CBE8 ;
-    text-align: center; color: #fff;
+    text-align: center;
+    color: #fff;
 }
 .programas__titulo{
     font-size: 30px;
       padding: 25px;
+      position: center;
 }
+
 .especial__img{
    width: 100%;  
 }
@@ -208,6 +234,13 @@ transform:scale(1.1);
         flex-wrap: wrap;
         justify-content: center;
 }
+
+.login{
+  font-size: 50px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+
 /*-----------------estilos de Ofertas--------------*/
 .ofertas__titulo{
     padding: 25px;
@@ -267,7 +300,7 @@ transform:scale(1.1);
 footer .contenedor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     padding-bottom: 25px;
 }
 .copy {
@@ -430,3 +463,4 @@ footer .contenedor {
     .contenedor{
         width: 1200px;
     }
+}
